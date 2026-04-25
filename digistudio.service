@@ -1,0 +1,15 @@
+[Unit]
+Description=DIGISTUDIO Site Service
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/root/.openclaw/workspace/digistudio-site
+Environment="PORT=3001"
+ExecStart=/usr/bin/npm run start
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
